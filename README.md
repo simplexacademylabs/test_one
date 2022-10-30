@@ -99,5 +99,55 @@ Accessing to http://a6f752d8ef7a94ddfbb0c7123619a4ce-300370210.us-east-1.elb.ama
 
 #Acccessing to http://a6f752d8ef7a94ddfbb0c7123619a4ce-300370210.us-east-1.elb.amazonaws.com/whoami/ should return "Nginx WhoAmI" - which is the index file of whoami container
 
+# Terraform Requirements
+#Install Terraform
+
+Verify your aws account:
+#aws sts get-caller-identity
+
+
+# Execute terraform
+
+Update value of user and s3 bucket in terraform.tfvars file
+
+Initialize providers
+#terraform init
+
+Run plan
+#terraform apply
+
+After terraform executed successfully, get output
+#terraform output access_key
+#terraform output secret_key
+
+#Export these two values with env vars:
+
+#export AWS_ACCESS_KEY_ID=<access_key>
+
+#export AWS_SECRET_ACCESS_KEY=<secret_key>
+
+# Verify current user is one created by terraform after exported env vars
+
+#aws sts get-caller-identity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
